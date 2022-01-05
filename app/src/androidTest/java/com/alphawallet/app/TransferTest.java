@@ -144,8 +144,10 @@ public class TransferTest {
     }
 
     private void importWalletFromSettingsPage(String seedPhrase) {
-        gotoSettingsPage();
-        click(withText("Change / Add Wallet"));
+//        gotoSettingsPage();
+//        click(withText("Change / Add Wallet"));
+        click(withId(R.id.nav_wallet));
+        click(withId(R.id.user_address_blockie));
         click(withId(R.id.action_add));
         click(withId(R.id.import_account_action));
         onView(allOf(withId(R.id.edit_text), withParent(withParent(withParent(withId(R.id.input_seed)))))).perform(replaceText(seedPhrase));
