@@ -306,8 +306,9 @@ public class WalletsActivity extends BaseActivity implements
         dialog.setContentView(addWalletView);
         dialog.setCancelable(true);
         dialog.setCanceledOnTouchOutside(true);
-        BottomSheetBehavior behavior = BottomSheetBehavior.from((View) addWalletView.getParent());
-        dialog.setOnShowListener(dialog -> behavior.setPeekHeight(addWalletView.getHeight()));
+        BottomSheetBehavior<View> behavior = BottomSheetBehavior.from((View) addWalletView.getParent());
+        behavior.setState(BottomSheetBehavior.STATE_EXPANDED);
+//        dialog.setOnShowListener(dialog -> behavior.setPeekHeight(addWalletView.getHeight()));
         dialog.show();
     }
 
