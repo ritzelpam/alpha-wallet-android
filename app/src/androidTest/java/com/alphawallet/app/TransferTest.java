@@ -118,7 +118,7 @@ public class TransferTest {
 
     private void sendBalanceTo(String receiverAddress, double amount) {
         click(withId(R.id.nav_wallet));
-        onView(isRoot()).perform(waitUntil(R.id.eth_data, withText(not(startsWith("0"))), 30));
+        onView(isRoot()).perform(waitUntil(R.id.eth_data, withText(not(startsWith("0"))), 600));
         click(withId(R.id.eth_data));
         click(withText("Send"));
         onView(withHint("0")).perform(replaceText(String.valueOf(amount)));
